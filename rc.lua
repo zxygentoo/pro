@@ -56,10 +56,10 @@ local exec   = function (s) oldspawn(s, false) end
 local shexec = awful.util.spawn_with_shell
 
 modkey        = "Mod4"
-terminal      = "termite"
-tmux          = "termite -e tmux"
-termax        = "termite --geometry 1680x1034+0+22"
-rootterm      = "sudo -i termite"
+terminal      = "xfce4-terminal"
+tmux          = "xfce4-terminal -e tmux"
+termax        = "xfce4-terminal --geometry 1680x1034+0+22"
+rootterm      = "sudo -i xfce4-terminal"
 browser       = "firefox"
 filemanager   = "spacefm"
 configuration = termax .. ' -e "vim -O $HOME/.config/awesome/rc.lua $HOME/.config/awesome/themes/' ..theme.. '/theme.lua"'
@@ -271,7 +271,7 @@ fswidget:set_bgimage(beautiful.widget_display)
 
 net_widgetdl = wibox.widget.textbox()
 net_widgetul = lain.widgets.net({
-    iface = "eth0",
+    iface = "wlp3s0",
     settings = function()
         widget:set_markup(markup.font("Tamsyn 1", "  ") .. net_now.sent)
         net_widgetdl:set_markup(markup.font("Tamsyn 1", " ") .. net_now.received .. markup.font("Tamsyn 1", " "))
